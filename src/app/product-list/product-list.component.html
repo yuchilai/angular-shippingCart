@@ -1,0 +1,50 @@
+<h2>Products</h2>
+
+<!-- <div *ngFor="let product of products">
+
+  <h3>
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <button (click)="share()">
+    Share
+  </button>
+  <app-product-alerts
+    [product]="product"
+    (notify)="onNotify()">
+  </app-product-alerts>
+
+</div> -->
+<!-- --------------------------------------------------------------------------- -->
+<!-- The app now has a product list and sharing feature. In the process, you've learned to use five common features of Angular's template syntax:
+
+*ngFor
+*ngIf
+Interpolation {{ }}
+Property binding [ ]
+Event binding ( ) -->
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
+
+
+<div *ngFor="let product of products; index as productId">
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
+  </h3>
+<!-- . . . -->
+</div>
